@@ -1,6 +1,6 @@
 import { reactive } from 'vue'
 import { Bulb } from './game/colors'
-import { getStored, setStored } from './setup/stored'
+import { clearStored, getStored, setStored } from './setup/stored'
 
 type Bridge = {
   id: string;
@@ -61,6 +61,8 @@ class HueApi{
       }else{
         const username = json.map(({success}) => success.username).find(username => username)
         if(username){
+          this.state.ip = checkIP
+          this.state.user = username
           setStored('ip', checkIP)
           setStored('user', username)
           this.state.pendingLinkPressed = false
@@ -98,6 +100,20 @@ class HueApi{
       method: 'PUT',
       body: JSON.stringify(color)
     })
+  }
+
+  clearSettings(){
+    this.state.ip = null
+    this.state.user = null
+    this.state.light = null
+    this.state.possibleIPs = []
+    this.state.loadState = 'loaded'
+    this.state.pendingLinkPressed = false
+
+    clearStored('ip')
+    clearStored('user')
+    clearStored('light')
+    this.initIP()
   }
 }
 

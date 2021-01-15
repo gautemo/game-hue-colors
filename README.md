@@ -1,19 +1,3 @@
-# game-color-lights
+# game-hue-colors
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Game created for my 2 years old niece where you need to pick the color the room is showing from a Philips Hue light.
