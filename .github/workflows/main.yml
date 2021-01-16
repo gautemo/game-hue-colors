@@ -1,0 +1,20 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: install & build
+        run: |
+          npm ci
+          npm run build
+      - name: deploy
+        run: npm run surge:deploy
