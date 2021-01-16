@@ -17,7 +17,7 @@ jobs:
           npm ci
           npm run build
       - name: deploy
-        env: |
+        env:
           SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
         run: npm run surge:deploy
