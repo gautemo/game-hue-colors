@@ -52,7 +52,7 @@ class HueApi{
       const response = await fetch(`http://${checkIP}/api`, {
         method: 'POST',
         body: JSON.stringify({
-          devicetype: 'game-color-lights-test' // TODO: rename to something permanently
+          devicetype: 'game-hue-colors'
         })
       })
       const json = await response.json() as any[]

@@ -1,4 +1,7 @@
 <template>
+  <teleport to="head">
+    <title>{{$t('title')}}</title>
+  </teleport>
   <router-view/>
 </template>
 
