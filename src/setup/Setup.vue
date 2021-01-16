@@ -19,7 +19,6 @@ export default {
     watchEffect(async () => {
       if(hueApi.state.user && hueApi.state.ip){
         lights.value = await hueApi.getLights()
-        console.log(lights.value)
       }
     })
 
