@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { router } from '../router'
 import { colors, Color } from './colors'
 import { hueApi } from '../HueApi';
+import { playAudio } from './sound';
 
 const random = (max: number) => Math.floor(Math.random() * Math.floor(max));
 
@@ -27,7 +28,7 @@ export default {
       if(color.value?.color === pickColor.color){
         flipped.value = []
         startColor()
-        // play sound
+        playAudio(pickColor.name)
       }else{
         flipped.value.push(pickColor)
       }

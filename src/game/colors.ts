@@ -1,10 +1,11 @@
 import { computed, ref, watchEffect } from 'vue'
 
 type Bulb = { bri: number, hue: number, sat: number }
-type Color = { color: string, bulb: Bulb }
+type Color = { color: string, bulb: Bulb, name: string }
 
 const allColors: Color[] = [
   {
+    name: 'red',
     color: 'red',
     bulb: {
       bri: 126,
@@ -13,7 +14,7 @@ const allColors: Color[] = [
     }
   },
   {
-    // blue
+    name: 'blue',
     color: '#004fff',
     bulb: {
       bri: 193,
@@ -22,6 +23,7 @@ const allColors: Color[] = [
     }
   },
   {
+    name: 'yellow',
     color: 'yellow',
     bulb: {
       bri: 206,
@@ -30,7 +32,7 @@ const allColors: Color[] = [
     }
   },
   {
-    // green
+    name: 'green',
     color: '#12c112',
     bulb: {
       bri: 181,
@@ -39,7 +41,7 @@ const allColors: Color[] = [
     }
   },
   {
-    // pink
+    name: 'pink',
     color: '#ff4299',
     bulb: {
       bri: 126,
@@ -48,7 +50,7 @@ const allColors: Color[] = [
     }
   },
   {
-    // purple
+    name: 'purple',
     color: '#a200aa',
     bulb: {
       bri: 126,
@@ -57,7 +59,7 @@ const allColors: Color[] = [
     }
   },
   {
-    // orange
+    name: 'orange',
     color: '#ff8d00',
     bulb: {
       bri: 169,
@@ -66,7 +68,7 @@ const allColors: Color[] = [
     }
   },
   {
-    // lightblue
+    name: 'lightblue',
     color: '#56c7ec',
     bulb: {
       bri: 181,

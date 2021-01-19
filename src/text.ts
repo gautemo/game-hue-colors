@@ -1,6 +1,7 @@
 const text = {
   no: {
     title: 'Fargespillet',
+    intro: 'Fargespillet for Philips Hue lyspære - for barn',
     ip_not_found: 'Kunne ikke finne en Hue Bridge. Sjekk at du er koblet til samme Wi-Fi som din Philips Hue Bridge',
     press_hue_bridge: 'Trykk på Push-Link knappen på ønsket Hue Bridge du vil koble til',
     done: 'Gjort',

@@ -34,10 +34,21 @@ export default {
 
     return { hueApi: hueApi.state, huePressed, lights, blink, selectLight }
   }
+  // setup(){
+  //   const hueApi = {
+  //     loadState: 'loaded',
+  //     user: true,
+  //     possibleIPs: [1],
+  //     pendingLinkPressed: false
+  //   }
+  //   const lights: any = [{id: 1, name: 'Lighty'}]
+  //   return { hueApi, lights }
+  // }
 }
 </script>
 
 <template>
+  <h1>{{ $t('intro') }}</h1>
   <main>
     <Loader v-if="hueApi.loadState === 'loading'"/>
     <p v-if="!hueApi.user && hueApi.possibleIPs.length === 0 && hueApi.loadState !== 'loading'">
@@ -59,6 +70,16 @@ export default {
 </template>
 
 <style scoped>
+h1{
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #fff;
+  text-shadow: 2px 2px 2px #000;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
 main{
   height: 100%;
   display: flex;

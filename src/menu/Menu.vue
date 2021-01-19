@@ -81,7 +81,7 @@ p{
 }
 
 .setup{
-  min-width: 300px;
+  min-width: 350px;
   font-size: 1.5rem;
   border-radius: 5px;
   border: none;
