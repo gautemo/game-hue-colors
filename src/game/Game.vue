@@ -24,11 +24,11 @@ export default {
 
     const flipped = ref<Color[]>([])
 
-    const pick = (pickColor: Color) => {
+    const pick = async (pickColor: Color) => {
       if(color.value?.color === pickColor.color){
         flipped.value = []
+        await playAudio(pickColor.name)
         startColor()
-        playAudio(pickColor.name)
       }else{
         flipped.value.push(pickColor)
       }
