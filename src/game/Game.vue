@@ -26,8 +26,8 @@ export default {
 
     const pick = async (pickColor: Color) => {
       if(color.value?.color === pickColor.color){
-        flipped.value = []
         await playAudio(pickColor.name)
+        flipped.value = []
         startColor()
       }else{
         flipped.value.push(pickColor)
