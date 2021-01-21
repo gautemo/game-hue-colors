@@ -42,7 +42,7 @@ const allColors: Color[] = [
   },
   {
     name: 'pink',
-    color: '#ff288b',
+    color: '#ff1fba',
     bulb: {
       bri: 126,
       hue: 59206,
@@ -51,11 +51,11 @@ const allColors: Color[] = [
   },
   {
     name: 'purple',
-    color: '#a200aa',
+    color: '#a52eab',
     bulb: {
-      bri: 126,
-      hue: 52181,
-      sat: 228,
+      bri: 112,
+      hue: 50158,
+      sat: 222,
     }
   },
   {
