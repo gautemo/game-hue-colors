@@ -1,5 +1,5 @@
 <script lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { router } from '../router'
 import { colors, Color } from './colors'
 import { hueApi } from '../HueApi';
@@ -34,13 +34,18 @@ export default {
       }
     }
 
-    return { toMenu, colors, flipped, pick }
+    const mainEl = ref<Element | null>(null)
+    onMounted(() => {
+      mainEl.value?.requestFullscreen()
+    })
+
+    return { toMenu, colors, flipped, pick, mainEl }
   }
 }
 </script>
 
 <template>
-  <main :style="{'--colors': colors.length / 2}">
+  <main :style="{'--colors': colors.length / 2}" ref="mainEl">
     <section>
       <div 
         v-for="color in colors" 

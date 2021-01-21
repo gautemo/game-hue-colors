@@ -4,9 +4,10 @@ import { hueApi } from '../HueApi'
 import { router } from '../router'
 import HueBridgeVisual from './HueBridgeVisual.vue'
 import Loader from './Loader.vue'
+import Language from '@/Language.vue'
 
 export default {
-  components: { HueBridgeVisual, Loader },
+  components: { HueBridgeVisual, Loader, Language },
   setup(){
     
     watchEffect(() => {
@@ -66,6 +67,7 @@ export default {
         <button @click="blink(light.id)">{{$t('blink')}}</button>
       </li>
     </ul>
+    <Language class="language"/>
   </main>
 </template>
 
@@ -121,5 +123,9 @@ ul span{
   font-size: 2rem;
   color: #fff;
   text-shadow: 2px 2px 2px #000;
+}
+
+main .language{
+  margin-top: 3rem;
 }
 </style>

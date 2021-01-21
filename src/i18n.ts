@@ -2,8 +2,13 @@ import { createI18n } from 'vue-i18n'
 import { text } from './text'
 
 const i18n = createI18n({
-  locale: 'no',
+  locale: localStorage.getItem('locale') ?? 'no',
   messages: text
 })
 
-export { i18n }
+const changeLocale = (locale: 'no' | 'nl') => {
+  i18n.global.locale = locale
+  localStorage.setItem('locale', locale)
+}
+
+export { i18n, changeLocale }

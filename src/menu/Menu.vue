@@ -2,8 +2,10 @@
 import { router } from '../router'
 import { toShow } from '../game/colors'
 import { hueApi } from '@/HueApi'
+import Language from '@/Language.vue'
 
 export default {
+  components: { Language },
   setup(){
     const play = () => router.push({name: 'game'})
     const changeLight = () => router.push({name: 'setup'})
@@ -25,6 +27,7 @@ export default {
       <button :class="{active: 6 === toShow}" @click="toShow = 6">6</button>
       <button :class="{active: 8 === toShow}" @click="toShow = 8">8</button>
     </div>
+    <Language/>
     <div class="space"></div>
     <button @click="changeLight" class="setup">{{$t('change_light')}}</button>
     <button @click="changeBridge" class="setup">{{$t('change_bridge')}}</button>

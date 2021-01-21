@@ -11,6 +11,19 @@ const text = {
     nr_colors: 'Antall farger',
     change_light: 'Endre lyspære',
     change_bridge: 'Endre Philips Hue Bridge'
+  },
+  nl: {
+    title: 'Het kleurenspel',
+    intro: 'Het kleurenschema voor de Philips Hue-gloeilamp - voor kinderen',
+    ip_not_found: 'Kan geen Hue Bridge vinden. Controleer of u bent verbonden met dezelfde wifi als uw Philips Hue bridge',
+    press_hue_bridge: 'Kan geen Hue Bridge vinden. Controleer of u bent verbonden met dezelfde wifi als uw Philips Hue bridge',
+    done: 'Gedaan',
+    select: 'Selecteer',
+    blink: 'Knipperen',
+    play: 'Spel',
+    nr_colors: 'Aantal kleuren',
+    change_light: 'Vervang de gloeilamp',
+    change_bridge: 'Wijzig Philips Hue Bridge'
   }
 }
 
