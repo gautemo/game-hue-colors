@@ -135,4 +135,18 @@
     stroke: #3b91d6;
   }
 }
+
+@media only screen and (max-height: 800px) {
+  svg{
+    height: 300px;
+    width: 300px;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  svg{
+    height: 200px;
+    width: 200px;
+  }
+}
 </style>

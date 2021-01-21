@@ -128,4 +128,10 @@ ul span{
 main .language{
   margin-top: 3rem;
 }
+
+@media only screen and (max-height: 800px) {
+  main .language{
+    margin-top: 0.5rem;
+  }
+}
 </style>
