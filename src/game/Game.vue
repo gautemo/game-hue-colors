@@ -11,6 +11,8 @@ export default {
   setup(){
     const toMenu = () => router.push({name: 'menu'})
 
+    const active = ref(false)
+
     const color = ref<Color | null>(null)
     const startColor = () => {
       let newColor = colors.value[random(colors.value.length)] 
@@ -24,11 +26,16 @@ export default {
 
     const flipped = ref<Color[]>([])
 
-    const pick = async (pickColor: Color) => {
+    const pick = async (pickColor: Color, name: String) => {
+      if(active.value){
+        return;
+      }
       if(color.value?.color === pickColor.color){
+        active.value = true;
         await playAudio(pickColor.name)
         flipped.value = []
         startColor()
+        active.value = false
       }else{
         flipped.value.push(pickColor)
       }
@@ -51,7 +58,8 @@ export default {
         v-for="color in colors" 
         :key="color" 
         :style="{ background: flipped.some(c => c.color === color.color) ? '#333' : color.color }" 
-        @click="pick(color)"
+        @touchstart="pick(color,'touch')"
+        @click="pick(color, 'click')"
         class="square">
       </div>
     </section>
